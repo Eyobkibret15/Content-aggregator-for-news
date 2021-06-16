@@ -5,21 +5,31 @@ import pprint
 import re
 
 
-def scraping_all_pages():
-    res = requests.get("https://www.bbc.com/news")
+def scraping_cnn_page():
+    res = requests.get("https://www.aljazeera.com/")
     soup = BeautifulSoup(res.text, "html.parser")
-    grn = soup.find_all("a")
-    stitle = soup.find_all(class_="gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-pica-bold "
-                                  "nw-o-link-split__anchor")
-    ftitle = soup.find_all(class_="gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-paragon-bold "
-                                  "nw-o-link-split__anchor")
-    title = ftitle + stitle
-    summary = soup.find_all(class_="gs-c-promo-summary gel-long-primer gs-u-mt nw-c-promo-summary")
-    date = soup.find_all(class_="gs-o-bullet__text date qa-status-date gs-u-align-middle gs-u-display-inline")
-    area = soup.find_all(class_="gs-c-section-link gs-c-section-link--truncate nw-c-section-link nw-o-link "
-                                "nw-o-link--no-visited-state")
-    news_list = (filtering_hacker_news(title, summary, date, area))
-    pprint.pprint(news_list)
+    title = soup.find_all(class_='fte-featured__title__link')[0].get_text()
+    titlelink = "https://www.aljazeera.com" + soup.find_all(class_='fte-featured__title__link')[0].get('href')
+    print(titlelink)
+    stitle = soup.find_all(class_='fte-featured__excerpt__link fte-featured__title__link')
+
+    for i in stitle:
+         stitle = i.get_text()
+         stitlelink = "https://www.aljazeera.com"+ i.get("href")
+    detail = soup.find_all(class_='fte-featured__excerpt__link fte-featured__title__link')
+      
+    # grn = soup.find_all("a")
+    # stitle = soup.find_all(class_="gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-pica-bold "
+    #                               "nw-o-link-split__anchor")
+    # ftitle = soup.find_all(class_="gs-c-promo-heading gs-o-faux-block-link__overlay-link gel-paragon-bold "
+    #                               "nw-o-link-split__anchor")
+    # title = ftitle + stitle
+    # summary = soup.find_all(class_="gs-c-promo-summary gel-long-primer gs-u-mt nw-c-promo-summary")
+    # date = soup.find_all(class_="gs-o-bullet__text date qa-status-date gs-u-align-middle gs-u-display-inline")
+    # area = soup.find_all(class_="gs-c-section-link gs-c-section-link--truncate nw-c-section-link nw-o-link "
+    #                             "nw-o-link--no-visited-state")
+    # news_list = (filtering_hacker_news(title, summary, date, area))
+    # pprint.pprint(news_list)
     # print(len(news_list))
     # database.initialize_database()
     # for news in news_list:
@@ -60,4 +70,4 @@ def filtering_hacker_news(title, summary, date, area):
     return news_list[:5]
 
 
-scraping_all_pages()
+scraping_cnn_page()

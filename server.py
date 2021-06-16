@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import database
 import hackernews
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def home():
