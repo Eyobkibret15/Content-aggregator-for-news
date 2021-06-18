@@ -33,7 +33,7 @@ def filtering_tvn24_news(title, times):
                 match_found = 1
                 continue
         if match_found == 0:
-            current_news = {'title': title, 'title_link': title_link, 'detail': detail,'time' : time}
+            current_news = {'title': title, 'title_link': title_link, 'detail': detail,'detaillink':title_link, 'time' : time}
             news_list.append(current_news)
 
     return news_list[:5]

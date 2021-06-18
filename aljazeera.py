@@ -35,7 +35,7 @@ def filtering_aljazeera_news(title, summery):
                 match_found = 1
                 continue
         if match_found == 0:
-            current_news = {'title': title, 'title_link': title_link, 'detail': detail}
+            current_news = {'title': title, 'title_link': title_link, 'detail': detail ,'detaillink':title_link , 'time':"" }
             news_list.append(current_news)
 
     return news_list[:5]
