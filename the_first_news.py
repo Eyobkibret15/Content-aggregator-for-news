@@ -9,21 +9,9 @@ def scraping_tvn24_page():
     soup = BeautifulSoup(res.text, "html.parser")
 
     titles = soup.find_all(class_='news__item')
-    # for index, item in enumerate(titles):
-    #     print(index)
-    #     if(item.find('h3')):
-    #         title = item.find('h3').get_text().replace("\n", "").strip()
-    #     if (item.find('h3').find('a').get('href')):
-    #         title_link = 'https://www.thefirstnews.com' + item.find('h3').find('a').get('href').replace("\n", "").strip()
-    #     if (item.find('p')):
-    #         detail = item.find('p').get_text().replace("\n", "").strip()
-    #
-    #     detail_link = 'https://www.thefirstnews.com' + item.find('h3').find('a').get('href').replace("\n", "").strip()
-    #     if (item.find('span')):
-    #         type = item.find('span').get_text().replace("\n", "").strip()
 
     newslist = filtering_tvn24_news(titles)
-    pprint.pprint(newslist)
+    pprint.pprint(soup)
     return "the first news database updated"
 
 
