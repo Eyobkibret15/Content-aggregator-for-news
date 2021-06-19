@@ -1,24 +1,11 @@
 from flask import Flask, render_template, request, redirect
 import database
-import hackernews
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    title = []
-    titlelink = []
-    comment = []
-    commentlink = []
-    detail = []
-    hackernews.scraping_all_pages()
-    database.initialize_database()
-    data = database.select_from_database("hackernews")
-    for value in data:
-        title.append(value[1])
-        titlelink.append(value[2])
-        comment.append(value[3])
-        commentlink.append(value[4])
-        detail.append(value[5])
+    title,titlelink,comment,commentlink,detail = database.sending_artibuite_to_the_server()
+    print(len(title))
     return render_template("index.html",
                            title0=title[0],titlelink0 = titlelink[0], comment0 = comment[0],commentlink0=commentlink[0],detail0 = detail[0],
                            title1=title[1],titlelink1 = titlelink[1], comment1 = comment[1],commentlink1=commentlink[1],detail1 = detail[1],

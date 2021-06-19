@@ -12,7 +12,8 @@ def scraping_tvn24_page():
 
     newslist = filtering_tvn24_news(titles)
     pprint.pprint(soup)
-    return "the first news database updated"
+
+    return"the first news database updated"
 
 
 def filtering_tvn24_news(titles):

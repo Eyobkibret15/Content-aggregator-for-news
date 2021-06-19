@@ -1,4 +1,3 @@
-import database
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,16 +10,16 @@ def scraping_all_pages():
     vote = soup.select(".subtext")
     news_list = (filtering_hacker_news(title, vote))
 
-    database.initialize_database()
+    # database.initialize_database()
     for news in news_list:
         title = news["Title"].replace("'" ,'"')
         titlelink = news['title_link'].replace("'" ,'"')
         comment = news['comment'].replace("'" ,'"')
         commentlink = news['comments_link'].replace("'" ,'"')
         detail = news['detail'].replace("'" ,'"')
-        database.insert_into_hackernews(title,titlelink,comment,commentlink,detail)
+        # database.insert_into_hackernews(title,titlelink,comment,commentlink,detail)
 
-    return "hackernews database updated"
+    return title,titlelink,comment,commentlink,detail
 
 
 def filtering_hacker_news(title, vote):
