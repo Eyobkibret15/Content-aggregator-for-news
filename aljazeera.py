@@ -1,8 +1,7 @@
 import database
 import requests
 from bs4 import BeautifulSoup
-import pprint
-import re
+
 
 
 def scraping_aljazeera_page():
@@ -15,7 +14,19 @@ def scraping_aljazeera_page():
 
     details = soup.find_all('p')
     newslist = filtering_aljazeera_news(title ,details)
-    pprint.pprint(newslist)
+
+    title = []
+    titlelink = []
+    time = []
+    detaillink = []
+    detail = []
+    for news in newslist:
+        title.append(news["title"].replace("'", '"'))
+        titlelink.append(news['title_link'].replace("'", '"'))
+        time.append(news['time'].replace("'", '"'))
+        detaillink.append(news['detaillink'].replace("'", '"'))
+        detail.append(news['detail'].replace("'", '"'))
+    database.insert_into_database("aljazeera", title, titlelink, time, detaillink, detail)
 
     return "aljazeera database updated"
 
@@ -35,7 +46,7 @@ def filtering_aljazeera_news(title, summery):
                 match_found = 1
                 continue
         if match_found == 0:
-            current_news = {'title': title, 'title_link': title_link, 'detail': detail ,'detaillink':title_link , 'time':"" }
+            current_news = {'title': title, 'title_link': title_link , 'time':"",'detaillink':title_link ,'detail': detail }
             news_list.append(current_news)
 
     return news_list[:5]

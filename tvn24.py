@@ -1,11 +1,10 @@
 import database
 import requests
 from bs4 import BeautifulSoup
-import pprint
-import re
 
 
-def scraping_tvn24_page():
+
+def scraping_tvn24_pages():
     res = requests.get("https://tvn24.pl/tvn24-news-in-english")
     soup = BeautifulSoup(res.text, "html.parser")
 
@@ -14,8 +13,19 @@ def scraping_tvn24_page():
     time = soup.find_all(class_='label-date')
 
     newslist = filtering_tvn24_news(title , time)
-    pprint.pprint(newslist)
-    return "aljazeera database updated"
+    title = []
+    titlelink = []
+    time = []
+    detaillink = []
+    detail = []
+    for news in newslist:
+        title.append(news["title"].replace("'", '"'))
+        titlelink.append(news['title_link'].replace("'", '"'))
+        time.append(news['time'].replace("'", '"'))
+        detaillink.append(news['detaillink'].replace("'", '"'))
+        detail.append(news['detail'].replace("'", '"'))
+    database.insert_into_database("tvn24", title, titlelink, time, detaillink, detail)
+    return "tvn24 database updated"
 
 
 def filtering_tvn24_news(title, times):
@@ -33,10 +43,7 @@ def filtering_tvn24_news(title, times):
                 match_found = 1
                 continue
         if match_found == 0:
-            current_news = {'title': title, 'title_link': title_link, 'detail': detail,'detaillink':title_link, 'time' : time}
+            current_news = {'title': title, 'title_link': title_link, 'time' : time,'detaillink':title_link,'detail': detail}
             news_list.append(current_news)
 
     return news_list[:5]
-
-
-scraping_tvn24_page()
