@@ -1,25 +1,33 @@
 import database
 import requests
 from bs4 import BeautifulSoup
-import pprint
-import re
 
-def scraping_tvn24_page():
+
+def scraping_first_news_pages():
     res = requests.get("https://www.thefirstnews.com/")
     soup = BeautifulSoup(res.text, "html.parser")
 
     titles = soup.find_all(class_='news__item')
+    newslist = filtering_first_news(titles)
 
-    newslist = filtering_tvn24_news(titles)
-    pprint.pprint(soup)
-
+    title = []
+    titlelink = []
+    type = []
+    detaillink = []
+    detail = []
+    for news in newslist:
+        title.append(news["title"].replace("'", '"'))
+        titlelink.append(news['title_link'].replace("'", '"'))
+        type.append(news['type'].replace("'", '"'))
+        detaillink.append(news['detaillink'].replace("'", '"'))
+        detail.append(news['detail'].replace("'", '"'))
+    database.insert_into_database("first_news", title, titlelink, type, detaillink, detail)
     return"the first news database updated"
 
 
-def filtering_tvn24_news(titles):
+def filtering_first_news(titles):
     news_list = []
     for index, item in enumerate(titles):
-        print(index)
         if (item.find('h3')):
             title = item.find('h3').get_text().replace("\n", "").strip()
         if (item.find('h3').find('a').get('href')):
@@ -36,11 +44,9 @@ def filtering_tvn24_news(titles):
                 match_found = 1
                 continue
         if match_found == 0:
-            current_news = {'title': title, 'title_link': title_link, 'detail': detail,'detail_link' : title_link ,
-                             'type':type}
+            current_news = {'title': title, 'title_link': title_link,'type':type,'detaillink' : title_link ,
+                             'detail': detail}
             news_list.append(current_news)
 
     return news_list[:5]
 
-
-scraping_tvn24_page()
