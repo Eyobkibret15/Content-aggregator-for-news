@@ -18,9 +18,10 @@ def scraping_all_pages():
         commentlink = news['comments_link'].replace("'" ,'"')
         detail = news['detail'].replace("'" ,'"')
         # database.insert_into_hackernews(title,titlelink,comment,commentlink,detail)
+    print(len(title))
+    
 
     return title,titlelink,comment,commentlink,detail
-
 
 def filtering_hacker_news(title, vote):
     news_list = []
@@ -40,4 +41,7 @@ def filtering_hacker_news(title, vote):
                 news_list.append(current_news)
 
     return sorted(news_list[:5], key=lambda k: k['Vote'])
+
+scraping_all_pages()
+
 
