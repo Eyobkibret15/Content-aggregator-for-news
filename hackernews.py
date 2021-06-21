@@ -9,22 +9,7 @@ def scraping_hackernews_pages():
 
     title = soup.select(".storylink")
     vote = soup.select(".subtext")
-<<<<<<< HEAD
-    news_list = (filtering_hacker_news(title, vote))
 
-    # database.initialize_database()
-    for news in news_list:
-        title = news["Title"].replace("'" ,'"')
-        titlelink = news['title_link'].replace("'" ,'"')
-        comment = news['comment'].replace("'" ,'"')
-        commentlink = news['comments_link'].replace("'" ,'"')
-        detail = news['detail'].replace("'" ,'"')
-        # database.insert_into_hackernews(title,titlelink,comment,commentlink,detail)
-    print(len(title))
-    
-
-    return title,titlelink,comment,commentlink,detail
-=======
     newslist = (filtering_hacker_news(title, vote))
 
     title =[]
@@ -40,7 +25,7 @@ def scraping_hackernews_pages():
         detail.append(news['detail'].replace("'", '"'))
     database.insert_into_database("hackernews",title,titlelink,comment,commentlink,detail)
     return "insert to hacker news"
->>>>>>> upstream/master
+
 
 def filtering_hacker_news(title, vote):
     news_list = []
@@ -58,10 +43,3 @@ def filtering_hacker_news(title, vote):
                                 'comments_link': comment_link, 'detail': detail, 'comment': comment}
                 news_list.append(current_news)
     return sorted(news_list[:5], key=lambda k: k['Vote'])
-<<<<<<< HEAD
-
-scraping_all_pages()
-
-
-=======
->>>>>>> upstream/master
