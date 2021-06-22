@@ -2,7 +2,7 @@ import psycopg2
 
 
 def create_table_for_hackernews():
-    connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     createhackernews = f"CREATE TABLE IF NOT EXISTS hackernews(id SERIAL PRIMARY KEY ,TITLE text,TITLELINK text,COMMENT text,COMMENTLINK text,DETAIL text);"
     cursor.execute(createhackernews)
@@ -10,35 +10,35 @@ def create_table_for_hackernews():
 
 
 def create_table_for_bbc():
-   connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     bbc = "CREATE TABLE IF NOT EXISTS bbc(id SERIAL PRIMARY KEY ,TITLE text,TITLELINK text,TIME text,LOCATION text,DETAIL text);"
     cursor.execute(bbc)
     connection.commit()
 
 def create_table_for_tvn24():
-    connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     tvn24 = "CREATE TABLE IF NOT EXISTS tvn24(id SERIAL PRIMARY KEY ,TITLE text,TITLELINK text,TIME text,DETAILLINK text,DETAIL text);"
     cursor.execute(tvn24)
     connection.commit()
 
 def create_table_for_aljazeera():
-    connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     aljazeera = "CREATE TABLE IF NOT EXISTS aljazeera(id SERIAL PRIMARY KEY ,TITLE text,TITLELINK text,TIME text,DETAILLINK text,DETAIL text);"
     cursor.execute(aljazeera)
     connection.commit()
 
 def create_table_for_first_news():
-    connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     firsr_news = "CREATE TABLE IF NOT EXISTS first_news (id SERIAL PRIMARY KEY ,TITLE text,TITLELINK text,TYPE text,DETAILLINK text,DETAIL text);"
     cursor.execute(firsr_news)
     connection.commit()
 
 def insert_into_database(news,title,titlelink,comment,commentlink,detail):
-    connection = psycopg2.connect(dbname="postgres", user="postgres", password="dbmikemoh")
+    connection = psycopg2.connect(dbname="postgres", user="postgres", password="postgres")
     cursor = connection.cursor()
     if news == "hackernews":
         create_table_for_hackernews()
