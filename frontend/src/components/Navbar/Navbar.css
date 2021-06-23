@@ -1,0 +1,15 @@
+.navbar{
+    padding: 0 1em 0 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup{
+   padding-top: 0.2em;
+   display: flex;
+   align-items: center;
+}
+
+.email{
+    margin-right: 0.2em;
+}
