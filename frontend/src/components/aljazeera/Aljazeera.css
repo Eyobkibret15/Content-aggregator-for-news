@@ -1,0 +1,15 @@
+.aljazeera > div {
+    margin: 1em;
+}
+
+.title{
+    /* text-decoration: none; */
+}
+
+.title:hover{
+    text-decoration: none;
+}
+
+.detail{
+    text-decoration: none;
+}

@@ -40,9 +40,9 @@ class App extends React.Component {
         {this.state.showNews ? 
         <div className="newsCompnentsContainer">
           <div><Aljazeera newsList={this.state.allNews.aljazeera} /></div>
+          <div><HackerNews newsList={this.state.allNews.hackernews} /></div>
           <div><Bbc newsList={this.state.allNews.bbc} /></div>
           <div><FirstNews newsList={this.state.allNews.firstnews} /></div>
-          <div><HackerNews newsList={this.state.allNews.hackernews} /></div>
           <div><Tvn24 newsList={this.state.allNews.tvn24} /></div>
         </div>
          : 'Loading ...'}

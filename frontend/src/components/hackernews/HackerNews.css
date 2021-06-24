@@ -1,0 +1,7 @@
+.hackerNews > div > a {
+    text-decoration: none;
+    color: black;
+}
+.hackerNews > div {
+    margin: 1em;
+}
