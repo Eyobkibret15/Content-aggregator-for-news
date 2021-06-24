@@ -2,14 +2,21 @@
     margin: 1em;
 }
 
-.title{
-    /* text-decoration: none; */
-}
-
-.title:hover{
+.aljazeeraTitle{
     text-decoration: none;
+    color: rgb(0, 102, 255);
+    /* color: white; */
+    font-size: larger;
+}
+.aljazeeraTitle:hover {
+    /* text-decoration: none; */
+    color: rgb(157, 160, 163);
 }
 
 .detail{
     text-decoration: none;
+    font-size: 14px;
+    font-weight: 100;
+    color: rgb(59, 51, 51);
+    /* color: wheat; */
 }

@@ -1,0 +1,12 @@
+.title {
+    text-decoration: none;
+    font-size: larger;
+    color: rgb(0, 102, 255);
+}
+
+.detail {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 100;
+    color: rgb(59, 51, 51);
+}

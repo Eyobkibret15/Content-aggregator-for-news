@@ -10,23 +10,23 @@ const HackerNews = ({ newsList }) => {
         <div className="hackerNews">
             <h2>HackerNews</h2>
            <div>
-               <a className="title black b grow" href={newsList.titlelink[0]}>{newsList.title[0]}</a>
+               <a className="title" href={newsList.titlelink[0]}>{newsList.title[0]}</a>
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[0].slice(0,-12)}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[0]}><FcComments />{newsList.comment[0].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a>
+                <a className="comment mr5" href={newsList.commentlink[0]}><FcComments />{newsList.comment[0].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
             </div>
             <hr/>
             <div>
-               <a className="title black b grow" href={newsList.titlelink[1]}>{newsList.title[1]}</a>
+               <a className="title" href={newsList.titlelink[1]}>{newsList.title[1]}</a>
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[1]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[1]}><FcComments />{newsList.comment[1].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a>
+                <a className="comment mr5" href={newsList.commentlink[1]}><FcComments />{newsList.comment[1].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
             </div>
             <hr/>
             <div>
-               <a className="title black b grow" href={newsList.titlelink[2]}>{newsList.title[2]}</a>
+               <a className="title" href={newsList.titlelink[2]}>{newsList.title[2]}</a>
             </div>
             <div>
                 <a  className="detail" href="#">{newsList.detail[2]}</a><br/>
@@ -34,15 +34,15 @@ const HackerNews = ({ newsList }) => {
             </div>
             <hr/>
             <div>
-               <a className="title black b grow" href={newsList.titlelink[3]}>{newsList.title[3]}</a>
+               <a className="title" href={newsList.titlelink[3]}>{newsList.title[3]}</a>
             </div>
             <div>
                 <a className="detail"  href="#">{newsList.detail[3]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[3]}><FcComments />{newsList.comment[3].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a>
+                <a className="comment mr5" href={newsList.commentlink[3]}><FcComments />{newsList.comment[3].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(0,-12)}</a>
             </div>
             <hr/>
             <div>
-               <a  className="title black b grow" href={newsList.titlelink[4]}>{newsList.title[4]}</a>
+               <a  className="title" href={newsList.titlelink[4]}>{newsList.title[4]}</a>
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[4]}</a><br/>
