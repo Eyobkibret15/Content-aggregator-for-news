@@ -1,8 +1,15 @@
 .newsCompnentsContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* background-image: linear-gradient(rgba(24, 22, 22, 0.815), rgba(36, 29, 29, 0.685)),url('./b5.jpg'); */
+  /* background-image: linear-gradient(rgba(24, 22, 22, 0.715), rgba(36, 29, 29, 0.685)),url('./news.jpg'); */
   background-position: center;
   background-repeat: no-repeat;
   /* color: aliceblue; */
+}
+.newsCompnentsContainer > div{
+  padding: 1em;
+}
+h2{
+  font-size: larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

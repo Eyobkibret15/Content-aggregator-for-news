@@ -4,7 +4,9 @@
     /* color: rgb(0, 102, 255); */
     color: white;
 }
-
+.title:hover{
+    color: rgb(217, 227, 236);
+}
 .detail {
     text-decoration: none;
     font-size: 14px;
@@ -14,5 +16,5 @@
 
 h3{
     font-size: 16px;
-    color: rgb(82, 69, 69);
+    color: rgb(102, 126, 124);
 }

@@ -14,7 +14,7 @@ const HackerNews = ({ newsList }) => {
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[0].slice(0,-12)}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[0]}><FcComments />{newsList.comment[0].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
+                <a className="comment mr5" href={newsList.commentlink[0]}><FcComments />{newsList.comment[0]}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
             </div>
             <hr/>
             <div>
@@ -22,7 +22,7 @@ const HackerNews = ({ newsList }) => {
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[1]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[1]}><FcComments />{newsList.comment[1].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
+                <a className="comment mr5" href={newsList.commentlink[1]}><FcComments />{newsList.comment[1]}</a><a><FcClock />{newsList.detail[0].slice(-11)}</a>
             </div>
             <hr/>
             <div>
@@ -30,7 +30,7 @@ const HackerNews = ({ newsList }) => {
             </div>
             <div>
                 <a  className="detail" href="#">{newsList.detail[2]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[2]}><FcComments />{newsList.comment[2].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a> 
+                <a className="comment mr5" href={newsList.commentlink[2]}><FcComments />{newsList.comment[2]}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a> 
             </div>
             <hr/>
             <div>
@@ -38,7 +38,7 @@ const HackerNews = ({ newsList }) => {
             </div>
             <div>
                 <a className="detail"  href="#">{newsList.detail[3]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[3]}><FcComments />{newsList.comment[3].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(0,-12)}</a>
+                <a className="comment mr5" href={newsList.commentlink[3]}><FcComments />{newsList.comment[3]}</a><a><FcClock />{newsList.detail[0].slice(0,-12)}</a>
             </div>
             <hr/>
             <div>
@@ -46,7 +46,7 @@ const HackerNews = ({ newsList }) => {
             </div>
             <div>
                 <a className="detail" href="#">{newsList.detail[4]}</a><br/>
-                <a className="comment mr5" href={newsList.commentlink[4]}><FcComments />{newsList.comment[4].slice(0,-9)}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a>
+                <a className="comment mr5" href={newsList.commentlink[4]}><FcComments />{newsList.comment[4]}</a><a><FcClock />{newsList.detail[0].slice(-12)}</a>
             </div>
         </div>
     )

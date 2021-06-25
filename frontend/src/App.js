@@ -7,6 +7,8 @@ import Bbc from './components/bbc/Bbc';
 import FirstNews from './components/firstnews/FirstNews';
 import HackerNews from './components/hackernews/HackerNews';
 import Tvn24 from './components/tvn24/Tvn24';
+import Footer from './components/Footer/Footer';
+
 
 import 'tachyons';
 
@@ -39,14 +41,15 @@ class App extends React.Component {
       <div>
         {this.state.showNews ? 
         <div className="newsCompnentsContainer">
+          <div><FirstNews newsList={this.state.allNews.firstnews} /></div>
+          <div><Tvn24 newsList={this.state.allNews.tvn24} /></div>
           <div><Aljazeera newsList={this.state.allNews.aljazeera} /></div>
           <div><HackerNews newsList={this.state.allNews.hackernews} /></div>
           <div><Bbc newsList={this.state.allNews.bbc} /></div>
-          <div><FirstNews newsList={this.state.allNews.firstnews} /></div>
-          <div><Tvn24 newsList={this.state.allNews.tvn24} /></div>
         </div>
          : 'Loading ...'}
       </div>      
+      <Footer />
     </div>
   );
 }

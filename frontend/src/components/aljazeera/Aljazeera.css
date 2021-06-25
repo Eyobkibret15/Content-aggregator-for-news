@@ -10,13 +10,15 @@
 }
 .aljazeeraTitle:hover {
     /* text-decoration: none; */
-    color: rgb(157, 160, 163);
+    color: rgb(217, 227, 236);
 }
 
 .detail{
     text-decoration: none;
     font-size: 14px;
     font-weight: 100;
-    color: rgb(59, 51, 51);
+    /* color: rgb(59, 51, 51); */
+    color: rgb(217, 227, 236);
+
     /* color: wheat; */
 }
