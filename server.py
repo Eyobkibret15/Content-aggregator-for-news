@@ -23,6 +23,7 @@ def home():
     hackernews_data = database.get_hackernews_data()
     news = {'hackernews':hackernews_data,'bbc':bbc_data,'aljazeera':aljazeera_data,'tvn24':tvn24_data,'firstnews':firstnews_data}
     pprint.pprint(news)
+
     return news
     # return render_template("index.html",
     #                        title0=title[0],titlelink0 = titlelink[0], comment0 = comment[0],commentlink0=commentlink[0],detail0 = detail[0],
@@ -31,4 +32,5 @@ def home():
     #                        title3=title[3],titlelink3 = titlelink[3], comment3 = comment[3],commentlink3=commentlink[3],detail3 = detail[3],
     #                        title4=title[4],titlelink4 = titlelink[4], comment4 = comment[4],commentlink4=commentlink[4],detail4 = detail[4])
 
-home()
+
+#this
